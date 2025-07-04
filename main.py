@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import os
 import sqlite3
 import tkinter as tk
@@ -654,3 +655,12 @@ if __name__ == "__main__":
     except Exception as e:
         messagebox.showerror("Критическая ошибка", f"Приложение завершено с ошибкой: {str(e)}")
         sys.exit(1)
+=======
+import tkinter as tk
+
+window = tk.Tk()
+window.title("Программный модуль обработки данных")
+title = tk.Label(text="Программный модуль обработки данных")
+title.pack()
+window.mainloop()
+>>>>>>> 3988446c0639527b5d48868f819dce6986024a16
