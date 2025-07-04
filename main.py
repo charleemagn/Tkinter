@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import os
 import sqlite3
 import tkinter as tk
@@ -240,7 +239,6 @@ class ModuleApp(tk.Tk):
         stats_frame = ttk.LabelFrame(self.testing_frame, text="Статистика испытаний")
         stats_frame.pack(fill=tk.X, pady=10, padx=10)
         
-        # Используем StringVar для автоматического обновления
         self.stats_vars = {
             'total': tk.StringVar(value="Всего испытаний: 0"),
             'excellent': tk.StringVar(value="Отлично: 0"),
@@ -296,14 +294,14 @@ class ModuleApp(tk.Tk):
 
     # Методы управления интерфейсом
     def show_main_interface(self):
-        """Показать главное меню"""
+        # интерфейс главного меню
         self.settings_frame.pack_forget()
         self.testing_frame.pack_forget()
         self.main_frame.pack(fill=tk.BOTH, expand=True)
         self.update_quick_stats()
 
     def show_settings_interface(self):
-        """Показать настройки"""
+        # интерфейс настроек
         self.main_frame.pack_forget()
         self.testing_frame.pack_forget()
         self.settings_frame.pack(fill=tk.BOTH, expand=True)
@@ -311,14 +309,14 @@ class ModuleApp(tk.Tk):
         self.fullscreen_var.set(self.fullscreen_mode)
 
     def show_testing_interface(self):
-        """Показать интерфейс испытаний"""
+        # интерфейс с испытаниями
         self.main_frame.pack_forget()
         self.settings_frame.pack_forget()
         self.testing_frame.pack(fill=tk.BOTH, expand=True)
         self.update_test_stats()
         self.load_test_history()
 
-    # Методы работы с испытаниями
+    # методы работы с испытаниями
     def start_test(self):
         """Начать новое испытание"""
         if self.test_in_progress:
@@ -333,7 +331,7 @@ class ModuleApp(tk.Tk):
         )
 
     def finish_test(self):
-        """Завершить текущее испытание"""
+        # завершение текущего испытания
         if not self.test_in_progress:
             messagebox.showwarning("Ошибка", "Испытание не начато!")
             return
@@ -365,14 +363,14 @@ class ModuleApp(tk.Tk):
             self.db_conn.rollback()
 
     def calculate_grade(self, time_sec):
-        """Определить оценку по времени выполнения"""
+        # оценка времени выполнения по испытанию
         if time_sec < 15: return "Отлично"
         if time_sec < 30: return "Хорошо"
         if time_sec < 60: return "Удовлетворительно"
         return "Неудачно"
 
     def delete_selected_test(self):
-        """Удалить выбранное испытание"""
+        # удалить испытание выбранное (1)
         selected_item = self.history_tree.selection()
         if not selected_item:
             messagebox.showwarning("Предупреждение", "Выберите испытание для удаления")
@@ -398,7 +396,7 @@ class ModuleApp(tk.Tk):
             self.db_conn.rollback()
 
     def clear_all_data(self):
-        """Очистить все данные испытаний"""
+        # чистка всех данных
         if not messagebox.askyesno(
             "Подтверждение", 
             "Вы действительно хотите удалить ВСЕ данные испытаний?\nЭто действие нельзя отменить!"
@@ -426,7 +424,7 @@ class ModuleApp(tk.Tk):
             cursor.execute("DELETE FROM test_results")
             self.db_conn.commit()
             
-            # Генерация тестовых данных
+            # генерация тестовых данных
             grades = ["Отлично", "Хорошо", "Удовлетворительно", "Неудачно"]
             time_ranges = {
                 "Отлично": (5, 15), 
@@ -462,7 +460,7 @@ class ModuleApp(tk.Tk):
             self.db_conn.rollback()
 
     def update_test_stats(self):
-        """Обновление статистики испытаний"""
+        # обновление испытаний в режиме испытаний
         try:
             cursor = self.db_conn.cursor()
             cursor.execute("""
@@ -497,8 +495,8 @@ class ModuleApp(tk.Tk):
         except sqlite3.Error as e:
             messagebox.showerror("Ошибка БД", f"Не удалось обновить статистику: {str(e)}")
 
+    # обновление краткой статистики в начале приложения
     def update_quick_stats(self):
-        """Обновление краткой статистики на главном экране"""
         try:
             cursor = self.db_conn.cursor()
             cursor.execute("""
@@ -526,9 +524,8 @@ class ModuleApp(tk.Tk):
             messagebox.showerror("Ошибка БД", f"Не удалось обновить краткую статистику: {str(e)}")
 
     def load_test_history(self):
-        """Загрузка истории испытаний в таблицу"""
         try:
-            # Очищаем текущие данные
+            # очистка данных существующих
             for item in self.history_tree.get_children():
                 self.history_tree.delete(item)
             
@@ -548,8 +545,8 @@ class ModuleApp(tk.Tk):
         except sqlite3.Error as e:
             messagebox.showerror("Ошибка БД", f"Не удалось загрузить историю испытаний: {str(e)}")
 
+    # экспорт данных в sql скрипт
     def export_data(self):
-        """Экспорт данных в SQL-скрипт"""
         try:
             cursor = self.db_conn.cursor()
             cursor.execute("SELECT name FROM sqlite_master WHERE type='table' AND name NOT LIKE 'sqlite_%'")
@@ -577,15 +574,13 @@ class ModuleApp(tk.Tk):
         except Exception as e:
             messagebox.showerror("Ошибка", f"Не удалось экспортировать данные: {str(e)}")
 
-    # Методы управления настройками
+    # методы управления в настройках
     def toggle_dark_mode(self):
-        """Переключение темной темы"""
         self.dark_mode = self.dark_mode_var.get()
         self.apply_theme()
         self.save_settings()
 
     def toggle_fullscreen(self):
-        """Переключение полноэкранного режима"""
         self.fullscreen_mode = self.fullscreen_var.get()
         self.attributes('-fullscreen', self.fullscreen_mode)
         if not self.fullscreen_mode:
@@ -593,7 +588,6 @@ class ModuleApp(tk.Tk):
         self.save_settings()
 
     def apply_theme(self):
-        """Применение выбранной темы"""
         bg = '#2d2d2d' if self.dark_mode else '#f0f0f0'
         fg = '#ffffff' if self.dark_mode else '#000000'
         
@@ -615,7 +609,7 @@ class ModuleApp(tk.Tk):
                            fieldbackground=bg,
                            rowheight=25)
         
-        # Обновляем стиль кнопки выхода
+        # обноление стиль кнопки выхода
         exit_bg = '#ff5555' if self.dark_mode else '#ff8000'
         self.style.configure('Exit.TButton', background=exit_bg)
         self.style.map('Exit.TButton',
@@ -624,7 +618,6 @@ class ModuleApp(tk.Tk):
                                 ('!disabled', exit_bg)])
 
     def save_settings(self):
-        """Сохранение настроек в БД"""
         try:
             cursor = self.db_conn.cursor()
             cursor.execute("""
@@ -636,7 +629,6 @@ class ModuleApp(tk.Tk):
             messagebox.showerror("Ошибка БД", f"Не удалось сохранить настройки: {str(e)}")
 
     def exit_app(self):
-        """Завершение работы приложения"""
         if messagebox.askyesno("Подтверждение", "Вы действительно хотите выйти?"):
             try:
                 self.export_data()
@@ -655,12 +647,3 @@ if __name__ == "__main__":
     except Exception as e:
         messagebox.showerror("Критическая ошибка", f"Приложение завершено с ошибкой: {str(e)}")
         sys.exit(1)
-=======
-import tkinter as tk
-
-window = tk.Tk()
-window.title("Программный модуль обработки данных")
-title = tk.Label(text="Программный модуль обработки данных")
-title.pack()
-window.mainloop()
->>>>>>> 3988446c0639527b5d48868f819dce6986024a16
