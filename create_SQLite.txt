@@ -1,0 +1,125 @@
+-- SQL-SCRIPT --
+-- Сгенерировано: 2025-07-03 15:27:18
+
+CREATE TABLE app_settings (
+                dark_mode BOOLEAN DEFAULT 0,
+                fullscreen_mode BOOLEAN DEFAULT 0
+            );
+
+CREATE TABLE test_results (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                test_time REAL NOT NULL,
+                is_completed BOOLEAN NOT NULL,
+                grade TEXT NOT NULL,
+                timestamp DATETIME DEFAULT CURRENT_TIMESTAMP
+            );
+
+INSERT INTO test_results (id,test_time,is_completed,grade,timestamp) VALUES (301,13.34,1,'Отлично','2024-07-18 14:49:17');
+INSERT INTO test_results (id,test_time,is_completed,grade,timestamp) VALUES (302,7.76,1,'Отлично','2025-04-30 10:37:17');
+INSERT INTO test_results (id,test_time,is_completed,grade,timestamp) VALUES (303,43.55,1,'Удовлетворительно','2025-06-17 16:51:17');
+INSERT INTO test_results (id,test_time,is_completed,grade,timestamp) VALUES (304,11.68,1,'Отлично','2025-02-11 07:24:17');
+INSERT INTO test_results (id,test_time,is_completed,grade,timestamp) VALUES (305,17.0,1,'Хорошо','2025-06-20 18:18:17');
+INSERT INTO test_results (id,test_time,is_completed,grade,timestamp) VALUES (306,35.27,1,'Удовлетворительно','2025-05-13 17:31:17');
+INSERT INTO test_results (id,test_time,is_completed,grade,timestamp) VALUES (307,51.43,1,'Удовлетворительно','2025-06-23 07:37:17');
+INSERT INTO test_results (id,test_time,is_completed,grade,timestamp) VALUES (308,7.77,1,'Отлично','2025-03-06 13:26:17');
+INSERT INTO test_results (id,test_time,is_completed,grade,timestamp) VALUES (309,26.93,1,'Хорошо','2025-02-09 17:03:17');
+INSERT INTO test_results (id,test_time,is_completed,grade,timestamp) VALUES (310,112.51,0,'Неудачно','2025-02-24 17:58:17');
+INSERT INTO test_results (id,test_time,is_completed,grade,timestamp) VALUES (311,29.15,1,'Хорошо','2024-12-15 01:36:17');
+INSERT INTO test_results (id,test_time,is_completed,grade,timestamp) VALUES (312,64.81,0,'Неудачно','2024-10-14 21:42:17');
+INSERT INTO test_results (id,test_time,is_completed,grade,timestamp) VALUES (313,61.12,0,'Неудачно','2024-09-22 19:14:17');
+INSERT INTO test_results (id,test_time,is_completed,grade,timestamp) VALUES (314,100.16,0,'Неудачно','2024-09-25 20:45:17');
+INSERT INTO test_results (id,test_time,is_completed,grade,timestamp) VALUES (315,20.52,1,'Хорошо','2024-11-14 17:30:17');
+INSERT INTO test_results (id,test_time,is_completed,grade,timestamp) VALUES (316,108.15,0,'Неудачно','2024-08-09 19:48:17');
+INSERT INTO test_results (id,test_time,is_completed,grade,timestamp) VALUES (317,6.69,1,'Отлично','2025-01-17 09:58:17');
+INSERT INTO test_results (id,test_time,is_completed,grade,timestamp) VALUES (318,29.56,1,'Хорошо','2024-07-05 02:29:17');
+INSERT INTO test_results (id,test_time,is_completed,grade,timestamp) VALUES (319,48.8,1,'Удовлетворительно','2025-04-07 09:36:17');
+INSERT INTO test_results (id,test_time,is_completed,grade,timestamp) VALUES (320,61.49,0,'Неудачно','2025-02-18 03:33:17');
+INSERT INTO test_results (id,test_time,is_completed,grade,timestamp) VALUES (321,19.91,1,'Хорошо','2025-04-11 06:17:17');
+INSERT INTO test_results (id,test_time,is_completed,grade,timestamp) VALUES (322,22.35,1,'Хорошо','2024-12-27 10:26:17');
+INSERT INTO test_results (id,test_time,is_completed,grade,timestamp) VALUES (323,30.22,1,'Удовлетворительно','2025-02-01 23:24:17');
+INSERT INTO test_results (id,test_time,is_completed,grade,timestamp) VALUES (324,13.98,1,'Отлично','2025-01-18 23:33:17');
+INSERT INTO test_results (id,test_time,is_completed,grade,timestamp) VALUES (325,18.04,1,'Хорошо','2025-04-21 23:29:17');
+INSERT INTO test_results (id,test_time,is_completed,grade,timestamp) VALUES (326,49.15,1,'Удовлетворительно','2024-11-26 15:31:17');
+INSERT INTO test_results (id,test_time,is_completed,grade,timestamp) VALUES (327,48.16,1,'Удовлетворительно','2025-05-31 14:23:17');
+INSERT INTO test_results (id,test_time,is_completed,grade,timestamp) VALUES (328,11.8,1,'Отлично','2025-06-21 10:55:17');
+INSERT INTO test_results (id,test_time,is_completed,grade,timestamp) VALUES (329,16.23,1,'Хорошо','2025-04-01 22:26:17');
+INSERT INTO test_results (id,test_time,is_completed,grade,timestamp) VALUES (330,22.96,1,'Хорошо','2025-02-18 06:31:17');
+INSERT INTO test_results (id,test_time,is_completed,grade,timestamp) VALUES (331,68.89,0,'Неудачно','2025-04-01 03:59:17');
+INSERT INTO test_results (id,test_time,is_completed,grade,timestamp) VALUES (332,11.78,1,'Отлично','2024-10-13 09:39:17');
+INSERT INTO test_results (id,test_time,is_completed,grade,timestamp) VALUES (333,24.39,1,'Хорошо','2024-10-10 04:12:17');
+INSERT INTO test_results (id,test_time,is_completed,grade,timestamp) VALUES (334,55.48,1,'Удовлетворительно','2025-03-11 12:43:17');
+INSERT INTO test_results (id,test_time,is_completed,grade,timestamp) VALUES (335,17.73,1,'Хорошо','2024-12-27 04:47:17');
+INSERT INTO test_results (id,test_time,is_completed,grade,timestamp) VALUES (336,30.31,1,'Удовлетворительно','2024-11-24 23:25:17');
+INSERT INTO test_results (id,test_time,is_completed,grade,timestamp) VALUES (337,51.14,1,'Удовлетворительно','2025-04-14 19:59:17');
+INSERT INTO test_results (id,test_time,is_completed,grade,timestamp) VALUES (338,10.03,1,'Отлично','2024-10-25 08:08:17');
+INSERT INTO test_results (id,test_time,is_completed,grade,timestamp) VALUES (339,45.2,1,'Удовлетворительно','2025-02-27 21:50:17');
+INSERT INTO test_results (id,test_time,is_completed,grade,timestamp) VALUES (340,10.63,1,'Отлично','2025-02-20 22:07:17');
+INSERT INTO test_results (id,test_time,is_completed,grade,timestamp) VALUES (341,31.46,1,'Удовлетворительно','2024-11-21 08:25:17');
+INSERT INTO test_results (id,test_time,is_completed,grade,timestamp) VALUES (342,5.47,1,'Отлично','2025-06-17 05:31:17');
+INSERT INTO test_results (id,test_time,is_completed,grade,timestamp) VALUES (343,7.52,1,'Отлично','2024-12-12 21:42:17');
+INSERT INTO test_results (id,test_time,is_completed,grade,timestamp) VALUES (344,63.4,0,'Неудачно','2025-01-08 11:07:17');
+INSERT INTO test_results (id,test_time,is_completed,grade,timestamp) VALUES (345,20.03,1,'Хорошо','2025-03-11 20:34:17');
+INSERT INTO test_results (id,test_time,is_completed,grade,timestamp) VALUES (346,97.17,0,'Неудачно','2024-11-12 10:49:17');
+INSERT INTO test_results (id,test_time,is_completed,grade,timestamp) VALUES (347,44.22,1,'Удовлетворительно','2024-09-24 22:12:17');
+INSERT INTO test_results (id,test_time,is_completed,grade,timestamp) VALUES (348,22.88,1,'Хорошо','2024-11-23 02:36:17');
+INSERT INTO test_results (id,test_time,is_completed,grade,timestamp) VALUES (349,82.5,0,'Неудачно','2024-09-05 16:32:17');
+INSERT INTO test_results (id,test_time,is_completed,grade,timestamp) VALUES (350,47.11,1,'Удовлетворительно','2024-10-10 17:19:17');
+INSERT INTO test_results (id,test_time,is_completed,grade,timestamp) VALUES (351,96.02,0,'Неудачно','2024-09-11 15:52:17');
+INSERT INTO test_results (id,test_time,is_completed,grade,timestamp) VALUES (352,51.45,1,'Удовлетворительно','2025-05-31 04:02:17');
+INSERT INTO test_results (id,test_time,is_completed,grade,timestamp) VALUES (353,40.78,1,'Удовлетворительно','2025-06-25 02:44:17');
+INSERT INTO test_results (id,test_time,is_completed,grade,timestamp) VALUES (354,10.32,1,'Отлично','2025-05-09 08:11:17');
+INSERT INTO test_results (id,test_time,is_completed,grade,timestamp) VALUES (355,21.45,1,'Хорошо','2025-02-12 07:58:17');
+INSERT INTO test_results (id,test_time,is_completed,grade,timestamp) VALUES (356,39.4,1,'Удовлетворительно','2025-04-11 05:27:17');
+INSERT INTO test_results (id,test_time,is_completed,grade,timestamp) VALUES (357,15.03,1,'Хорошо','2024-12-07 00:37:17');
+INSERT INTO test_results (id,test_time,is_completed,grade,timestamp) VALUES (358,31.48,1,'Удовлетворительно','2024-10-04 20:13:17');
+INSERT INTO test_results (id,test_time,is_completed,grade,timestamp) VALUES (359,114.93,0,'Неудачно','2025-06-12 10:05:17');
+INSERT INTO test_results (id,test_time,is_completed,grade,timestamp) VALUES (360,26.02,1,'Хорошо','2024-07-05 08:01:17');
+INSERT INTO test_results (id,test_time,is_completed,grade,timestamp) VALUES (361,58.26,1,'Удовлетворительно','2025-06-24 23:15:17');
+INSERT INTO test_results (id,test_time,is_completed,grade,timestamp) VALUES (362,7.9,1,'Отлично','2025-02-08 06:43:17');
+INSERT INTO test_results (id,test_time,is_completed,grade,timestamp) VALUES (363,12.22,1,'Отлично','2025-03-04 08:33:17');
+INSERT INTO test_results (id,test_time,is_completed,grade,timestamp) VALUES (364,7.88,1,'Отлично','2025-02-07 19:22:17');
+INSERT INTO test_results (id,test_time,is_completed,grade,timestamp) VALUES (365,41.07,1,'Удовлетворительно','2025-03-23 11:56:17');
+INSERT INTO test_results (id,test_time,is_completed,grade,timestamp) VALUES (366,22.45,1,'Хорошо','2024-07-11 19:18:17');
+INSERT INTO test_results (id,test_time,is_completed,grade,timestamp) VALUES (367,12.9,1,'Отлично','2024-12-10 07:54:17');
+INSERT INTO test_results (id,test_time,is_completed,grade,timestamp) VALUES (368,10.75,1,'Отлично','2025-03-22 07:39:17');
+INSERT INTO test_results (id,test_time,is_completed,grade,timestamp) VALUES (369,13.89,1,'Отлично','2025-05-16 07:51:17');
+INSERT INTO test_results (id,test_time,is_completed,grade,timestamp) VALUES (370,59.36,1,'Удовлетворительно','2024-08-16 04:41:17');
+INSERT INTO test_results (id,test_time,is_completed,grade,timestamp) VALUES (371,23.51,1,'Хорошо','2025-06-17 04:55:17');
+INSERT INTO test_results (id,test_time,is_completed,grade,timestamp) VALUES (372,72.56,0,'Неудачно','2024-09-24 01:32:17');
+INSERT INTO test_results (id,test_time,is_completed,grade,timestamp) VALUES (373,16.26,1,'Хорошо','2024-11-24 22:12:17');
+INSERT INTO test_results (id,test_time,is_completed,grade,timestamp) VALUES (374,21.37,1,'Хорошо','2024-10-03 04:15:17');
+INSERT INTO test_results (id,test_time,is_completed,grade,timestamp) VALUES (375,19.13,1,'Хорошо','2025-04-04 08:53:17');
+INSERT INTO test_results (id,test_time,is_completed,grade,timestamp) VALUES (376,30.35,1,'Удовлетворительно','2024-11-25 13:59:17');
+INSERT INTO test_results (id,test_time,is_completed,grade,timestamp) VALUES (377,107.09,0,'Неудачно','2024-12-23 12:47:17');
+INSERT INTO test_results (id,test_time,is_completed,grade,timestamp) VALUES (378,27.52,1,'Хорошо','2025-05-26 23:47:17');
+INSERT INTO test_results (id,test_time,is_completed,grade,timestamp) VALUES (379,7.81,1,'Отлично','2024-10-31 01:55:17');
+INSERT INTO test_results (id,test_time,is_completed,grade,timestamp) VALUES (380,19.81,1,'Хорошо','2024-12-16 03:30:17');
+INSERT INTO test_results (id,test_time,is_completed,grade,timestamp) VALUES (381,111.92,0,'Неудачно','2024-08-24 07:13:17');
+INSERT INTO test_results (id,test_time,is_completed,grade,timestamp) VALUES (382,13.25,1,'Отлично','2025-05-02 04:25:17');
+INSERT INTO test_results (id,test_time,is_completed,grade,timestamp) VALUES (383,68.0,0,'Неудачно','2025-02-07 01:03:17');
+INSERT INTO test_results (id,test_time,is_completed,grade,timestamp) VALUES (384,35.96,1,'Удовлетворительно','2025-02-04 14:22:17');
+INSERT INTO test_results (id,test_time,is_completed,grade,timestamp) VALUES (385,83.07,0,'Неудачно','2024-10-07 07:14:17');
+INSERT INTO test_results (id,test_time,is_completed,grade,timestamp) VALUES (386,48.87,1,'Удовлетворительно','2025-06-22 23:14:17');
+INSERT INTO test_results (id,test_time,is_completed,grade,timestamp) VALUES (387,89.82,0,'Неудачно','2024-09-04 18:06:17');
+INSERT INTO test_results (id,test_time,is_completed,grade,timestamp) VALUES (388,11.3,1,'Отлично','2025-05-10 00:50:17');
+INSERT INTO test_results (id,test_time,is_completed,grade,timestamp) VALUES (389,68.41,0,'Неудачно','2024-10-21 06:10:17');
+INSERT INTO test_results (id,test_time,is_completed,grade,timestamp) VALUES (390,60.43,0,'Неудачно','2025-01-19 10:23:17');
+INSERT INTO test_results (id,test_time,is_completed,grade,timestamp) VALUES (391,46.73,1,'Удовлетворительно','2024-08-27 14:50:17');
+INSERT INTO test_results (id,test_time,is_completed,grade,timestamp) VALUES (392,98.89,0,'Неудачно','2024-10-04 18:36:17');
+INSERT INTO test_results (id,test_time,is_completed,grade,timestamp) VALUES (393,28.89,1,'Хорошо','2024-09-11 08:24:17');
+INSERT INTO test_results (id,test_time,is_completed,grade,timestamp) VALUES (394,79.51,0,'Неудачно','2025-05-11 17:33:17');
+INSERT INTO test_results (id,test_time,is_completed,grade,timestamp) VALUES (395,25.9,1,'Хорошо','2025-03-14 14:37:17');
+INSERT INTO test_results (id,test_time,is_completed,grade,timestamp) VALUES (396,37.1,1,'Удовлетворительно','2024-12-08 18:12:17');
+INSERT INTO test_results (id,test_time,is_completed,grade,timestamp) VALUES (397,86.02,0,'Неудачно','2025-04-15 04:07:17');
+INSERT INTO test_results (id,test_time,is_completed,grade,timestamp) VALUES (398,93.0,0,'Неудачно','2024-11-05 17:02:17');
+INSERT INTO test_results (id,test_time,is_completed,grade,timestamp) VALUES (399,20.5,1,'Хорошо','2025-05-02 14:35:17');
+INSERT INTO test_results (id,test_time,is_completed,grade,timestamp) VALUES (400,36.42,1,'Удовлетворительно','2025-06-30 23:03:17');
+
+CREATE TABLE test_stats (
+                total_tests INTEGER DEFAULT 0,
+                excellent INTEGER DEFAULT 0,
+                good INTEGER DEFAULT 0,
+                satisfactory INTEGER DEFAULT 0,
+                failed INTEGER DEFAULT 0
+            );
+
